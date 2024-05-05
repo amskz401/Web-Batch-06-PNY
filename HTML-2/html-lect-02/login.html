@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Login</title>
+	<link rel="stylesheet" type="text/css" href="style.css">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+	<script type="text/javascript">
+		function show_hide_pass() {
+			var password = document.getElementById("password");
+			if(password.type == "password") {
+				password.type = "text";
+			} else {
+				password.type = "password";
+			}
+		}
+	</script>
+</head>
+<body>
+	<header>
+		<nav class="header-nav">
+			<a href="home.html">Home</a>
+			<a href="contact.html">Contact</a>
+			<a href="profile.html">Profile</a>
+			<a href="login.html">Login</a>
+			<a href="register.html">Register</a>
+		</nav>
+	</header>
+	<div class="container">
+		<div class="form-container">
+		<h1>Login Page</h1>
+		<form>
+			<div class="form-group">
+				<label>Enter Email</label>
+				<input type="email" name="" class="form-input">
+			</div>
+			<div class="form-group">
+				<label>Password</label>
+				<div class="span">
+					<input type="password" id="password" name="" class="form-input"><i class="fa-regular fa-eye" onclick="show_hide_pass()"></i>
+				</div>
+				
+			</div>
+			<div class="form-group">
+				<input type="submit" name="" value="Login" class="form-input-register">
+			</div>
+		</form>
+		</div>
+	</div>
+	<footer>
+		copyright@pny 2024
+	</footer>
+</body>
+</html>

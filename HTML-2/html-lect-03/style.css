@@ -1,0 +1,127 @@
+* {
+    font-family: cursive;
+    margin: 0;
+    padding: 0;
+}
+nav.header-nav {
+    background-color: #35725d;
+}
+nav.header-nav a {
+    color: white;
+    font-size: 20px;
+    margin: 10px;
+    text-decoration: none;
+}
+nav.header-nav ul {
+    display: flex;
+}
+
+nav.header-nav {
+    display: flex;
+    padding: 20px;
+}
+.button {
+    margin-left: auto;
+}
+nav.header-nav li {
+    list-style: none;
+}
+li.active a {
+    background: white;
+    color: #35725d;
+    padding: 20px;
+}
+nav.header-nav ul li a:hover {
+    background: white;
+    color: #35725d;
+    padding: 20px;
+}
+.button button {
+    background: #bf72bf;
+    padding: 5px 10px;
+    color: white;
+    font-size: 20px;
+}
+.banner {
+    background-image: url(background_in_space.gif);
+    text-align: center;
+    color: #fff;
+        padding: 10% 20%;
+}
+.banner h1 {
+    font-size: 50px;
+    margin-bottom: 25px;
+}
+.banner p {
+    font-size: 20px;
+    margin-bottom: 25px;
+}
+p.search-box input {
+    width: 50%;
+    height: 40px;
+    padding: 0 15px;
+    font-size: 20px;
+    border-radius: 20px;
+    border-top-right-radius: 0px;
+    border-bottom-right-radius: 0px;
+    border: 0px;
+}
+p.search-box {
+    display: flex;
+    justify-content: center;
+}
+p.search-box i.fa-solid {
+    background: #04AA6D;
+    color: white;
+    border: none;
+    width: 80px;
+    height: 40px;
+    border-top-right-radius: 20px;
+    border-bottom-right-radius: 20px;
+}
+.fa-magnifying-glass:before, .fa-search:before {
+    vertical-align: -webkit-baseline-middle;
+}
+.row-col-section{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+}
+.row-col-section.bg1{
+    background-color: #D9EEE1;
+}
+.row-col-section.bg2{
+    background-color: #FFF4A3;
+}
+.right{
+    background-color: #E7E9EB;
+}
+.form-container {
+    padding: 20px 50px;
+    background-color: #b4eecc4a;
+    min-height: 600px;
+}
+.form-group label {
+    display: block;
+    margin-bottom: 10px;
+}
+.form-input {
+    width: 100%;
+    height: 30px;
+}
+.form-group {
+    margin-bottom: 15px;
+}
+input.form-input-register {
+    background-color: #4c9268;
+    padding: 10px 25px;
+    color: white;
+    font-size: 18px;
+}
+textarea {
+    height: 200px;
+    width: 100%;
+}
+div.row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+}

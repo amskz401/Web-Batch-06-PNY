@@ -1,0 +1,35 @@
+		.card {
+		    width: 600px;
+		    background-image: url(bg-image.jpg);
+		    height: 400px;
+		    margin: auto;
+		}
+		h1.tag-line {
+		    background-color: #26627b;
+		    color: white;
+		    box-shadow: 13px 19px 20px black;
+		}
+		.my-info {
+		    display: flex;
+		}
+		img {
+		    border: 5px solid #79a879;
+		    width: 200px;
+		}
+		
+		.boxes {
+		    display: flex;
+		    gap: 20px;
+		}
+
+		.box {
+		    width: 50px;
+		    height: 50px;
+		    border: 2px solid;
+		}
+		i.bi {
+    font-size: 40px;
+}
+.box {
+    text-align: center;
+}
