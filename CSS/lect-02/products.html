@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Layout</title>
+	<style type="text/css">
+		* {
+			margin: 0;
+			padding: 0;
+		}
+		.sub-menu{
+			display: none;
+		}
+		.container {
+			width: 80%;
+			margin: auto;
+		}
+		h1.logo {
+		    text-align: center;
+		}
+		nav.top-navbar ul {
+		    display: flex;
+		}
+		nav.sub-menu{
+			display: none;
+		}
+		nav.top-navbar li {
+    list-style: none;
+}
+		nav.top-navbar ul {
+    display: flex;
+    justify-content: center;
+    gap: 2%;
+}
+h1.logo {
+    text-align: center;
+    margin: 20px 0;
+}
+nav.top-navbar a {
+    text-decoration: none;
+    background-image: linear-gradient(to right, #956262, #597459, #4e4ebf);
+    color: #fff;
+    padding: 10px 20px;
+    border-radius: 5px;
+}
+nav.top-navbar a:hover {
+    background: black;
+    color: white;
+}
+.products {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    gap: 3%;
+}
+.text {
+    text-align: center;
+    background-image: linear-gradient(#565fe5, #44e6d3);
+    margin-top: 0px;
+    padding-top: 0;
+    color: white;
+    padding: 25px 0;
+}
+a.cart-btn {
+    border: 2px solid;
+    padding: 2px 10px;
+    border-radius: 5px;
+    text-decoration: none;
+}
+p.set-margin {
+    margin-top: 10px;
+}
+.about-product {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2%;
+}
+.main-footer{
+	background-color: black;
+	color: white;	
+	text-align: center;
+	padding: 5px;
+}
+	</style>
+</head>
+<body>
+	
+	<header class="top-header">
+		<h1 class="logo">Logo</h1>
+		<nav class="top-navbar">
+			<ul>
+				<li><a href="index.html">Home</a></li>
+				<li><a href="Products.html">Products</a></li>
+				<li><a href="Cart">Cart</a></li>
+				<li class="dropdown"><a href="Account">My Account</a></li>
+			</ul>
+		</nav>
+	</header>
+	
+	<div class="container">
+		<h1>Products List</h1>
+		<!-- list featured prodcuts -->
+		<div class="products">
+			<div class="product">
+				<img src="sunset-1373171_1280.jpg" width="100%">
+				<div class="text">
+					<p>Product Name</p>
+					<p>$45</p>
+					<p class="set-margin">
+						<a href="" class="cart-btn">Add to Cart</a>
+					</p>
+				</div>
+			</div>
+			<div class="product">
+				<img src="sunset-1373171_1280.jpg" width="100%">
+				<div class="text">
+					<p>Product Name</p>
+					<p>$45</p>
+					<p class="set-margin">
+						<a href="" class="cart-btn">Add to Cart</a>
+					</p>
+				</div>
+			</div>
+			<div class="product">
+				<img src="sunset-1373171_1280.jpg" width="100%">
+				<div class="text">
+					<p>Product Name</p>
+					<p>$45</p>
+					<p class="set-margin">
+						<a href="" class="cart-btn">Add to Cart</a>
+					</p>
+				</div>
+			</div>
+			<div class="product">
+				<img src="sunset-1373171_1280.jpg" width="100%">
+				<div class="text">
+					<p>Product Name</p>
+					<p>$45</p>
+					<p class="set-margin">
+						<a href="" class="cart-btn">Add to Cart</a>
+					</p>
+				</div>
+			</div>
+			<div class="product">
+				<img src="sunset-1373171_1280.jpg" width="100%">
+				<div class="text">
+					<p>Product Name</p>
+					<p>$45</p>
+					<p class="set-margin">
+						<a href="" class="cart-btn">Add to Cart</a>
+					</p>
+				</div>
+			</div>
+			<div class="product">
+				<img src="sunset-1373171_1280.jpg" width="100%">
+				<div class="text">
+					<p>Product Name</p>
+					<p>$45</p>
+					<p class="set-margin">
+						<a href="" class="cart-btn">Add to Cart</a>
+					</p>
+				</div>
+			</div>
+			<div class="product">
+				<img src="sunset-1373171_1280.jpg" width="100%">
+				<div class="text">
+					<p>Product Name</p>
+					<p>$45</p>
+					<p class="set-margin">
+						<a href="" class="cart-btn">Add to Cart</a>
+					</p>
+				</div>
+			</div>
+			<div class="product">
+				<img src="sunset-1373171_1280.jpg" width="100%">
+				<div class="text">
+					<p>Product Name</p>
+					<p>$45</p>
+					<p class="set-margin">
+						<a href="" class="cart-btn">Add to Cart</a>
+					</p>
+				</div>
+			</div>
+			<div class="product">
+				<img src="sunset-1373171_1280.jpg" width="100%">
+				<div class="text">
+					<p>Product Name</p>
+					<p>$45</p>
+					<p class="set-margin">
+						<a href="" class="cart-btn">Add to Cart</a>
+					</p>
+				</div>
+			</div>
+			<div class="product">
+				<img src="sunset-1373171_1280.jpg" width="100%">
+				<div class="text">
+					<p>Product Name</p>
+					<p>$45</p>
+					<p class="set-margin">
+						<a href="" class="cart-btn">Add to Cart</a>
+					</p>
+				</div>
+			</div>
+			<div class="product">
+				<img src="sunset-1373171_1280.jpg" width="100%">
+				<div class="text">
+					<p>Product Name</p>
+					<p>$45</p>
+					<p class="set-margin">
+						<a href="" class="cart-btn">Add to Cart</a>
+					</p>
+				</div>
+			</div>
+			<div class="product">
+				<img src="sunset-1373171_1280.jpg" width="100%">
+				<div class="text">
+					<p>Product Name</p>
+					<p>$45</p>
+					<p class="set-margin">
+						<a href="" class="cart-btn">Add to Cart</a>
+					</p>
+				</div>
+			</div>
+			<div class="product">
+				<img src="sunset-1373171_1280.jpg" width="100%">
+				<div class="text">
+					<p>Product Name</p>
+					<p>$45</p>
+					<p class="set-margin">
+						<a href="" class="cart-btn">Add to Cart</a>
+					</p>
+				</div>
+			</div>
+			<div class="product">
+				<img src="sunset-1373171_1280.jpg" width="100%">
+				<div class="text">
+					<p>Product Name</p>
+					<p>$45</p>
+					<p class="set-margin">
+						<a href="" class="cart-btn">Add to Cart</a>
+					</p>
+				</div>
+			</div>
+			<div class="product">
+				<img src="sunset-1373171_1280.jpg" width="100%">
+				<div class="text">
+					<p>Product Name</p>
+					<p>$45</p>
+					<p class="set-margin">
+						<a href="" class="cart-btn">Add to Cart</a>
+					</p>
+				</div>
+			</div>
+			<div class="product">
+				<img src="sunset-1373171_1280.jpg" width="100%">
+				<div class="text">
+					<p>Product Name</p>
+					<p>$45</p>
+					<p class="set-margin">
+						<a href="" class="cart-btn">Add to Cart</a>
+					</p>
+				</div>
+			</div>
+		</div>
+
+	</div>
+	<footer class="main-footer">
+		<p>copyright@PNY 2024</p>
+	</footer>
+</body>
+</html>

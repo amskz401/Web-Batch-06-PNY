@@ -1,0 +1,13 @@
+
+* {
+	font-family: cursive;
+}
+/*header css start*/
+h1, p {
+    text-align: center !important;
+/*    color: #fff; white*/
+/*    color: #000; black */
+/*	  color: #ccc; gray*/
+}
+
+/*header css end*/
