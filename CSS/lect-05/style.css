@@ -1,0 +1,51 @@
+body {
+	background-color: lightcyan;
+	font-size: clamp(1rem, 2.5vw, 4rem);
+}
+
+.row {
+	display: flex;
+	flex-wrap: wrap;
+	gap: 1%;
+}
+.col {
+	width: 24%;
+}
+
+@media ( max-width: 500px ) {
+	body {
+		background-color: #416565;
+	}
+	.col {
+		width: 99%;
+	}
+}
+
+@media ( min-width: 800px ) {
+	body {
+		background-color: tomato;
+	}
+	.col {
+		width: 49%;
+	}
+}
+
+@media ( min-width: 500px ) and ( max-width: 800px ) {
+	body {
+		background-color: blue;
+	}
+}
+
+@media print and (min-width: 480px) {
+	body {
+		color: red;
+		font-size: 50px;
+	}
+}
+
+/*@media (min-width: 2000px) {
+	body {
+		background-color: gray !important;
+		font-size: 3rem;
+	}
+}*/

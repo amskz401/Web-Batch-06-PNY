@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Animation</title>
+	<style type="text/css">
+		@keyframes loader {
+			0% {
+				top: 0;
+				left: 0;
+				
+			}
+			25% {
+				top: 0;
+				left: calc(100% - 100px);
+				
+			}
+			50% {
+				top: calc(100% - 100px);
+				left: calc(100% - 100px);
+				bottom: 0;
+			}
+			75% {
+				top: calc(100% - 100px);
+				left: 0%;
+				bottom: 0;
+			}
+			100% {
+				top: 0%;
+				left: 0%;
+
+			}
+			
+		}
+
+		/*.boxes {
+			display: flex;
+			gap: 2%;
+		}*/
+		.box {
+			width: 100px;
+			height: 50px;
+			background-color: red;
+			position: absolute;
+			animation: loader 6s 6 linear;
+		}
+		/*.b1 {
+			animation: loader 1s 2 linear;
+		}*/
+
+		/* HTML: <div class="loader"></div> */
+		.loader {
+		  width: 45px;
+		  aspect-ratio: .75;
+		  --c: no-repeat linear-gradient(#000 0 0);
+		  background: 
+		    var(--c) 0%   50%,
+		    var(--c) 50%  50%,
+		    var(--c) 100% 50%;
+		  background-size: 20% 60%;
+		  animation: l9 1s infinite;
+		}
+		img {
+		    /* box-shadow: 0 0 10px black; */
+		    filter: drop-shadow(0px 0px 20px black);
+		}
+		@keyframes l9 {
+		  33% {background-position: 0% 0%  ,50% 100%,100% 0%  }
+		  66% {background-position: 0% 100%,50% 0%  ,100% 100%}
+		}
+	</style>
+</head>
+<body>
+	<!-- <div class="boxes"> -->
+		<!-- <div class="box"></div> -->
+		<!-- <div class="box b2"></div>
+		<div class="box b3"></div> -->
+	<!-- </div> -->
+	<div class="loader"></div>
+	<div class="nloader"></div>
+	<img src="png-2702691_640.webp" width="100%">
+</body>
+</html>
