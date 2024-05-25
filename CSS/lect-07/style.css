@@ -1,0 +1,24 @@
+.nav-list-items a {
+    font-size: 18px;
+    font-weight: bold;
+}
+
+.nav-list-items a:hover {
+    color: tomato;
+}
+.slider-bottom {
+    padding: 24px 0;
+}
+.img-hover {
+    overflow: hidden;
+    border: 1px solid black;
+}
+.img-hover img {
+    transition: all 0.3s linear;
+    width: 100%;
+    height: auto;
+    border: 1px solid black;
+}
+.img-hover:hover img {
+    transform: scale(1.3);
+}
