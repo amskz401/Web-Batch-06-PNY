@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Clock</title>
+	
+</head>
+<body>
+	<h1 id="clock">
+		
+	</h1>
+	<script type="text/javascript">
+		let clock = document.getElementById("clock");
+		setInterval( () => {
+			let d = new Date();
+			// clock.innerText = new Date();
+			clock.innerText = d.getHours() + ":" + d.getMinutes() + ":" + d.getSeconds();
+		}, 1000 );
+	</script>
+</body>
+</html>
