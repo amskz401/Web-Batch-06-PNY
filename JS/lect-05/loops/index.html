@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title></title>
+</head>
+<body>
+	<input type="number" id="number" name="">
+	<button id="btn">Click Me</button>
+	<p id="even"></p>
+	<p id="odd"></p>
+
+	<script type="text/javascript">
+		let btn = document.getElementById("btn");
+		let number = document.getElementById("number");
+
+		btn.addEventListener("click", function() { 
+			// limited 0 - 10 indexed loop
+			// limited each item
+			// let html = "";
+			// for (let index = 1; index <= 10; index++) {
+			// 	html += index * Number(number.value) + "<br>";
+			// }
+			// result.innerHTML = html;
+
+			// let even_num = "";
+			// let odd_num = "";
+			for (let i = 0; i < number.value; i++) {
+				if( i % 2 == 0 ) {
+					even.append(i)
+				} else {
+					odd.append(i)
+				}
+			}
+
+			// even.innerHTML = even_num;
+			// odd.innerHTML = odd_num;
+		});
+	</script>
+</body>
+</html>
