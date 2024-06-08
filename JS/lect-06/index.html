@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Lottery</title>
+</head>
+
+
+<!-- sigup page -->
+<!-- single primer / 1 - 100 / [45, 54,12,3,78,65,12,98] / fabnocci series (0, 1, 1, 2, 3......) limit 50  -->
+<!-- [45, 54,12,3,78,65,12,98] search / array[object, object] / number of students / -->
+<!-- [{id: 1, name: "Farhan"}, {id: 2, name: "Ahamd", {id: 3, name: "Farhan"}] / search -->
+<!-- [45, 54,12,3,78,65,12,98] / sort asc,desc -->
+
+<body>
+	<input type="number" id="enter_number" name="">
+	
+	<button id="try_luck">Try Your Luck</button>
+
+	<script type="text/javascript">
+		function try_lottery() {
+			let number = 0;
+			do{
+				number = prompt("Enter Number");
+				if(number < 0 || number > 200) {
+					break;
+				}
+			} 
+			while(number != 155)
+
+			// 1 - 200;
+			// if(enter_number.value < 0 || enter_number.value > 200) {
+			// 	alert("Invalid Number");
+			// 	return;
+			// }
+
+			// if(enter_number.value == 155) {
+			// 	alert("You win the lottery");
+			// } else {
+			// 	alert("Try Again");
+			// }
+		}
+		// try_lottery();
+
+		// add stduents
+		// udpate student
+		// delete student
+		// view stuend
+		// download something
+
+
+	</script>
+</body>
+</html>
