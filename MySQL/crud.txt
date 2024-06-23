@@ -1,0 +1,25 @@
+CRUD
+	Create/Insert, Retrieve/Select, Update, Delete
+
+-------------
+
+SELECT 
+	1.  SELECT * FROM `tbl_products` WHERE 1; // Retrieve/Select
+	1.1 SELECT `id`, `title`, `description`, `price` FROM `tbl_products`; // Get Selected Columns
+
+INSERT
+	1. INSERT INTO `tbl_products`(`title`, `description`, `price`, `stock`) VALUES ('Samsung', 'Samsung Stock From Dubai', 400, 10);
+
+UPDATE
+	UPDATE `tbl_products` SET `price`= 50 WHERE 1; // Update All Records
+	UPDATE `tbl_products` SET `price`= 60 WHERE id = 2; //Update Specific Record
+
+DELETE 
+	DELETE FROM `tbl_products` WHERE 1 // Delete All Records
+	DELETE FROM `tbl_products` WHERE id = 2; // Delete Specific Record
+
+DROP
+	TRUNCATE TABLE tbl_products; // Delete All Records
+	DROP TABLE `web_b6`.`tbl_products` // Delete Complete Table
+	DROP DATABASE `web_b6` // Delete Whole Database;
+

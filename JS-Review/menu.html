@@ -1,0 +1,78 @@
+<!-- inline / internal / external -->
+
+<!-- setTimeout(), setInternal() -->
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>JS Review</title>
+	<style type="text/css">
+		ul.main-menu {
+		    display: flex;
+		    gap: 5%;
+		}
+		ul.child-menu {
+    display: none;
+}
+/*li.dropdown a.btn:hover + ul.child-menu {
+    display: block;
+}*/
+	</style>
+</head>
+<body>
+	<header>
+		<nav>
+			<ul class="main-menu">
+				<li class="dropdown">
+					<a href="" class="btn">Home</a>
+					<ul class="child-menu">
+						<li><a href="">Home 1</a></li>
+						<li><a href="">Home 1</a></li>
+						<li><a href="">Home 1</a></li>
+				
+					</ul>
+				</li>
+				<li><a href="">Services</a></li>
+				<li><a href="">Contact</a></li>
+				<li><a href="">About</a></li>
+				<li class="dropdown">
+					<a href="" class="btn">Home 2</a>
+					<ul class="child-menu">
+						<li><a href="">Home 2</a></li>
+						<li><a href="">Home 2</a></li>
+						<li><a href="">Home 2</a></li>
+				
+					</ul>
+				</li>
+			</ul>
+		</nav>
+	</header>
+	<div class="container">
+	</div>
+
+	<!-- <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script> -->
+	<script type="text/javascript">
+		let btn = document.getElementsByClassName("btn")[0];
+		btn.onclick = function(event) {
+			let parent = this.parentNode;
+			// console.log(parent.find(".child-menu"));
+
+
+			// console.log(parent.querySelector(".child-menu").style.display);
+			// console.log(parent.getElementsByClassName("child-menu")[0].style.display);
+
+
+			if(parent.querySelector(".child-menu").style.display == "block") {
+				// alert("here");
+				parent.querySelector(".child-menu").style.display = "none";
+			}
+			else {
+				parent.querySelector(".child-menu").style.display = "block";
+			}
+			// console.log(this);
+			event.preventDefault();
+		}
+	</script>
+</body>
+</html>

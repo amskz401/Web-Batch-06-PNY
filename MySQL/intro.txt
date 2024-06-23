@@ -1,0 +1,5 @@
+MySQL 
+	My Structure Query Language
+
+CRUD
+	Create/Insert, Retrieve/Select/Get, Update, Delete
