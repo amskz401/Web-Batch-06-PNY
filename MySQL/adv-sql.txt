@@ -1,0 +1,55 @@
+Logical Operators
+	(=, !=, >, <, >=, <=, in, not in, and, or)
+
+SELECT * FROM `wp_options` WHERE option_id = 25; // get specific record
+
+SELECT * FROM `wp_options` WHERE option_id = 25 AND autoload = "no";
+
+SELECT * FROM `wp_options` WHERE option_id = 25 OR autoload = "no";
+
+SELECT * FROM `wp_options` WHERE (option_id = 25 AND option_value = "") OR autoload = "no";
+
+SELECT * FROM `wp_options` WHERE option_id != 25;
+
+SELECT * FROM `wp_options` WHERE NOT option_id = 4;
+
+SELECT * FROM `wp_options` ORDER BY option_id ASC;
+
+SELECT * FROM `wp_options` ORDER BY option_id DESC;
+
+SELECT * FROM `wp_options` ORDER BY RAND();
+
+SELECT * FROM `wp_options` WHERE option_name IS null;
+
+SELECT * FROM `wp_options` WHERE option_name is NOT null;
+
+
+SELECT * FROM `wp_options` ORDER BY option_id DESC LIMIT 10;
+
+SELECT * FROM `wp_options` WHERE option_id < 200 ORDER BY option_id DESC LIMIT 10;  // get from 190 to 199
+
+SELECT * FROM `wp_options` WHERE option_id BETWEEN 190 AND 200; // get records from 190 to 200
+
+SELECT * FROM `wp_options` LIMIT 10;
+
+SELECT * FROM `wp_options` LIMIT 10 OFFSET 0 // get first 10 records
+
+SELECT * FROM `wp_options` LIMIT 10, 10; // get next 10 records to 20
+
+SELECT * FROM `wp_actionscheduler_logs`, wp_options; // get data from multiple tables
+
+SELECT id, price, COUNT(id) as price FROM `tbl_products` GROUP BY price;
+
+Aggregate Functions
+	
+	SUM / COUNT / AVG / MIN / MAX
+
+MAX() (1 - 10) 9
+
+SELECT * FROM `wp_postmeta` WHERE () ORDER BY meta_id DESC LIMIT 1;
+
+SELECT *, (SELECT cat_name FROM `tbl_categories` WHERE id = 2) as cat_name FROM `tbl_products`;
+
+SELECT *, CASE WHEN price = 50 THEN "ok" WHEN price = 60 THEN "not ok" END AS QuantityText FROM `tbl_products`; // if else conditional statement
+
+SELECT *, IF(price > 50, "50 > MORE", "50 < LESS") as price FROM `tbl_products`; // if else
