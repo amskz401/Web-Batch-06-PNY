@@ -5,6 +5,7 @@
       <table class="table">
         <thead>
           <tr>
+            <th>#</th>
             <th scope="col">Title</th>
             <th scope="col">Price</th>
             <th scope="col">Stock</th>
@@ -14,12 +15,22 @@
         <tbody>
           <% products.forEach( prod => { %>
           <tr>
+            <td>
+              <img src="/images/<%= prod.image %>" width="150px" alt="" />
+            </td>
             <td scope="row"><%= prod.title %></td>
             <td scope="row"><%= prod.price %></td>
             <td scope="row"><%= prod.stock %></td>
             <td>
-              <a href="/edit-product" class="btn btn-primary">Edit</a>
-              <a href="/del-product" class="btn btn-danger">Del</a>
+              <a href="/edit-product/<%= prod._id %>" class="btn btn-primary"
+                >Edit</a
+              >
+              <a
+                onclick="return confirm('are you sure ?')"
+                href="/del-product/<%= prod._id %>"
+                class="btn btn-danger"
+                >Del</a
+              >
             </td>
           </tr>
           <% }) %>

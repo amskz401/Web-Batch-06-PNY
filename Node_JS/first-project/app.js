@@ -1,18 +1,28 @@
 const express = require("express");
 const expressLayouts = require("express-ejs-layouts");
 const mongoose = require("mongoose");
-require("./server/config/db");
+const multer = require("multer");
+require("dotenv").config();
 
-const productSchema = new mongoose.Schema({
-  title: String,
-  price: Number,
-  stock: Number,
+const storage = multer.diskStorage({
+  destination: function (req, file, cb) {
+    cb(null, "public/images");
+  },
+  filename: function (req, file, cb) {
+    const uniqueSuffix = Date.now() + "-" + Math.round(Math.random() * 1e9);
+    cb(null, file.fieldname + "-" + uniqueSuffix + ".jpg");
+  },
 });
-const Product = mongoose.model("Products", productSchema);
+const upload = multer({ storage: storage });
+
+require("./server/config/db");
 
 const app = express();
 
-const PORT = 3000;
+const PORT = process.env.PORT || 4000;
+
+// Static Path
+app.use(express.static("public"));
 
 // Layout settings
 app.set("view engine", "ejs");
@@ -23,42 +33,7 @@ app.set("layout", "./layouts/app");
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 
-app.get("/", (req, res) => {
-  // return view("index", $data);
-  const data = Product.find();
-  //   res.render("index", { new_title: "Home Page", products: data });
-
-  Product.find()
-    .then((data) => {
-      console.log(data);
-      res.render("index", { new_title: "Home Page", products: data });
-    })
-    .catch((error) => {
-      console.log(error);
-      res.end();
-    });
-});
-
-app.get("/add-product", (req, res) => {
-  // return view("index", $data);
-  res.render("add-product", { new_title: "Product Page" });
-});
-
-app.post("/post-product", (req, res) => {
-  add_product = new Product(req.body);
-  //   await add_product.save();
-
-  add_product
-    .save()
-    .then((data) => {
-      console.log(data);
-    })
-    .catch((error) => {
-      console.log(error);
-    });
-
-  res.redirect("/");
-});
+app.use("/", require("./routes/product"));
 
 app.listen(PORT, () => {
   console.log(`Server started at: ${PORT}`);
