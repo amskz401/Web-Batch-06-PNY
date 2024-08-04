@@ -3,6 +3,7 @@ const expressLayouts = require("express-ejs-layouts");
 const mongoose = require("mongoose");
 const multer = require("multer");
 require("dotenv").config();
+const session = require("express-session");
 
 const storage = multer.diskStorage({
   destination: function (req, file, cb) {
@@ -19,6 +20,25 @@ require("./server/config/db");
 
 const app = express();
 
+app.use(
+  session({
+    secret: "user-login-session",
+    resave: false,
+    saveUninitialized: true,
+  })
+);
+
+// middleware to test if authenticated
+function isAuthenticated(req, res, next) {
+  console.log(req.session);
+
+  if (req.session.user) {
+    next();
+  } else {
+    res.redirect("/login");
+  }
+}
+
 const PORT = process.env.PORT || 4000;
 
 // Static Path
@@ -33,7 +53,11 @@ app.set("layout", "./layouts/app");
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 
+// Product Routes
 app.use("/", require("./routes/product"));
+
+// User Routes
+app.use("/", require("./routes/user"));
 
 app.listen(PORT, () => {
   console.log(`Server started at: ${PORT}`);
