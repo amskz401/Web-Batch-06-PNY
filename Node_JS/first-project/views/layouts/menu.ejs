@@ -44,9 +44,12 @@
         </li>
       </ul>
       <form class="d-flex" role="search">
+        <% if (logged_in.status) { %>
+        <a class="btn btn-outline-primary" href="/logout">Logout</a>
+        <% } else { %>
         <a class="btn btn-outline-success mx-2" href="/login">Login</a>
         <a class="btn btn-outline-info" href="/register">Register</a>
-        <a class="btn btn-outline-primary" href="/logout">Logout</a>
+        <% } %>
       </form>
     </div>
   </div>

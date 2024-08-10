@@ -22,12 +22,14 @@
             <td scope="row"><%= prod.price %></td>
             <td scope="row"><%= prod.stock %></td>
             <td>
-              <a href="/edit-product/<%= prod._id %>" class="btn btn-primary"
+              <a
+                href="/admin/edit-product/<%= prod._id %>"
+                class="btn btn-primary"
                 >Edit</a
               >
               <a
                 onclick="return confirm('are you sure ?')"
-                href="/del-product/<%= prod._id %>"
+                href="/admin/del-product/<%= prod._id %>"
                 class="btn btn-danger"
                 >Del</a
               >

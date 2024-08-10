@@ -4,6 +4,7 @@ const mongoose = require("mongoose");
 const multer = require("multer");
 require("dotenv").config();
 const session = require("express-session");
+const flash = require("express-flash");
 
 const storage = multer.diskStorage({
   destination: function (req, file, cb) {
@@ -28,15 +29,32 @@ app.use(
   })
 );
 
+app.use(flash());
+
+app.use((req, res, next) => {
+  res.locals.logged_in = {
+    first_name: "Guest",
+    status: false,
+  };
+  next();
+});
+
 // middleware to test if authenticated
 function isAuthenticated(req, res, next) {
-  console.log(req.session);
-
   if (req.session.user) {
+    res.locals.logged_in = {
+      log_user: req.session.user,
+      status: true,
+    };
     next();
   } else {
     res.redirect("/login");
   }
+}
+
+function is_admin(req, res, next) {
+  if (req.session.user.user_type == "admin") next();
+  else res.redirect("/");
 }
 
 const PORT = process.env.PORT || 4000;
@@ -53,8 +71,30 @@ app.set("layout", "./layouts/app");
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 
+// app.user( (req, res, next) => {
+//   res.
+// } )
+
+// default page
+app.get("/", (req, res) => {
+  res.render("home", { new_title: "Home Page" });
+});
+
+app.get("/logout", (req, res) => {
+  req.session.user = null;
+  req.session.save(function (err) {
+    if (err) next(err);
+    // regenerate the session, which is good practice to help
+    // guard against forms of session fixation
+    req.session.regenerate(function (err) {
+      if (err) next(err);
+      res.redirect("/");
+    });
+  });
+});
+
 // Product Routes
-app.use("/", require("./routes/product"));
+app.use("/admin", isAuthenticated, is_admin, require("./routes/product"));
 
 // User Routes
 app.use("/", require("./routes/user"));

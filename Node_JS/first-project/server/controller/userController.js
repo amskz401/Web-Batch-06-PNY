@@ -1,4 +1,5 @@
 const User = require("../model/User");
+const validator = require("email-validator");
 
 const registerUser = (req, res) => {
   const newUser = new User(req.body);
@@ -14,13 +15,24 @@ const registerUser = (req, res) => {
 };
 
 const userLogin = (req, res) => {
+  let check_email = validator.validate(req.body.user_email);
+  if (!check_email) {
+    req.flash("error", "Invliad email");
+    res.redirect("/login");
+    return false;
+  }
   User.findOne(req.body)
     .then((user) => {
-      console.log(user);
-
       if (user) {
-        res.redirect("/");
+        req.session.regenerate(function (err) {
+          req.session.user = user;
+          req.session.save(function (err) {
+            if (err) return next(err);
+            res.redirect("/admin");
+          });
+        });
       } else {
+        req.flash("error", "Username/Password not matched!");
         res.redirect("/login");
       }
     })
